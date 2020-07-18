@@ -38,6 +38,10 @@ export class SummaryService {
 
   constructor() {
     this.summaryArray = [];
+    this.clientInfo = {
+      clientName: '',
+      tableNumber: null
+    }
    }
 
    saveClientInfo(info: any) {

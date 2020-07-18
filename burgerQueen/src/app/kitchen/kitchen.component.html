@@ -1,1 +1,33 @@
-<p>kitchen works!</p>
+<div>
+  <table style="background-color: black; width: 100%;">
+    <thead>
+      <tr>
+        <td># </td>
+        <td>Cliente</td>
+        <td>Mesa</td>
+        <td>Producto</td>
+        <td>Precio</td>
+        <td>Cantidad</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of ordersObserverData; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{order.clientName}}</td>
+        <td>{{order.tableNumber}}</td>
+        <td colspan="3">
+          <table style="width: 100%;">
+            <tbody>
+              <tr *ngFor="let lineItem of order.selectedItem">
+                <td>{{lineItem.product.name}}</td>
+                <td>{{lineItem.product.price}}</td>
+                <td>{{lineItem.quantity}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
